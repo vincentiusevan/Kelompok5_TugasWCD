@@ -1,0 +1,748 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <title>NeuroSync | Pantau Ritme Kerja Tim</title>
+    <meta
+      name="description"
+      content="Check-in harian, agenda tim, dan catatan work life balance dalam satu aplikasi.
+      Datanya bisa langsung dipakai HR buat membaca kondisi tim."
+    />
+    <meta name="author" content="Kelompok NeuroSync - Web Client Development" />
+    <meta name="theme-color" content="#1b6b46" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#beranda">Langsung ke konten utama</a>
+
+    <!-- ================= TOPBAR: HEADER + NAVBAR ================= -->
+    <div class="topbar" id="topbar">
+      <!-- ===== HEADER ===== -->
+      <header class="site-header">
+        <div class="header-inner">
+          <a class="brand" href="#beranda">
+            <img
+              class="brand-logo"
+              src="assets/logo/logo-mark.png"
+              alt=""
+              width="53"
+              height="36"
+              decoding="async"
+            />
+            <span class="brand-name">NeuroSync</span>
+          </a>
+
+          <div class="header-actions">
+            <a class="btn btn-sm btn-solid header-cta" href="#kontak">Minta demo</a>
+
+            <button class="btn-icon" id="themeToggle" type="button" aria-pressed="false">
+              <span class="btn-icon-glyph" aria-hidden="true">🌙</span>
+              <span class="btn-icon-text">Dark Mode</span>
+            </button>
+
+            <button
+              class="nav-toggle"
+              id="navToggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="primary-menu"
+            >
+              <span class="nav-toggle-bars" aria-hidden="true"></span>
+              <span class="sr-only">Buka menu navigasi</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- ===== NAVBAR ===== -->
+      <nav class="site-navbar" aria-label="Navigasi utama">
+        <ul class="navbar-inner" id="primary-menu">
+          <li><a class="nav-link is-active" href="#beranda">Beranda</a></li>
+          <li><a class="nav-link" href="#tentang">Tentang Kami</a></li>
+          <li><a class="nav-link" href="#visi-misi">Visi & Misi</a></li>
+          <li><a class="nav-link" href="#fitur">Produk & Fitur</a></li>
+          <li><a class="nav-link" href="#faq">FAQ</a></li>
+          <li><a class="nav-link" href="#tim">Tim Founder</a></li>
+          <li><a class="nav-link" href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="page">
+      <!-- ================= KONTEN UTAMA ================= -->
+      <main class="main-content">
+        <!-- ===== HERO ===== -->
+        <section class="hero" id="beranda" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow">Buat tim remote & hybrid</p>
+            <h1 id="hero-title">Produktif boleh, burnout jangan</h1>
+            <p class="hero-lead">
+              Check-in harian, agenda tim, dan catatan work life balance kumpul di satu tempat.
+              Datanya bisa langsung dipakai HR buat membaca kondisi tim.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-solid" href="#fitur">Lihat fitur</a>
+              <a class="btn btn-outline" href="#kontak">Minta demo</a>
+            </div>
+          </div>
+
+          <div
+            class="preview"
+            role="img"
+            aria-label="Cuplikan dasbor NeuroSync: streak 18 hari berturut-turut, dan pembagian jam kerja, istirahat, serta hiburan hari ini."
+          >
+            <div class="preview-bar" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+
+            <div class="preview-body" aria-hidden="true">
+              <div class="preview-row">
+                <p class="preview-label">Streak kamu</p>
+                <p class="preview-stat">18<span>hari</span></p>
+              </div>
+
+              <div class="dots">
+                <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
+                <i class="on"></i><i class="off"></i><i class="on"></i><i class="on"></i>
+                <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
+                <i class="on"></i><i class="today"></i>
+              </div>
+
+              <p class="preview-label preview-label-gap">Jam hari ini</p>
+              <dl class="bars">
+                <div>
+                  <dt>Kerja</dt>
+                  <dd><span class="bar bar-work" style="--w: 78%"></span><b>7,8 jam</b></dd>
+                </div>
+                <div>
+                  <dt>Istirahat</dt>
+                  <dd><span class="bar bar-rest" style="--w: 42%"></span><b>4,2 jam</b></dd>
+                </div>
+                <div>
+                  <dt>Hiburan</dt>
+                  <dd><span class="bar bar-fun" style="--w: 20%"></span><b>2,0 jam</b></dd>
+                </div>
+              </dl>
+
+              <p class="preview-note">
+                <span aria-hidden="true">⚠</span> Tiga hari terakhir jam kerjamu di atas rata-rata.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== ANGKA ===== -->
+        <section class="stats" aria-labelledby="stats-title">
+          <h2 class="sr-only" id="stats-title">NeuroSync dalam angka</h2>
+          <dl class="stats-grid">
+            <div class="stat">
+              <dt>Perusahaan pengguna</dt>
+              <dd class="num">42</dd>
+            </div>
+            <div class="stat">
+              <dt>Karyawan aktif</dt>
+              <dd class="num">2.480</dd>
+            </div>
+            <div class="stat">
+              <dt>Rata-rata streak</dt>
+              <dd class="num">18<span class="unit">hari</span></dd>
+            </div>
+            <div class="stat">
+              <dt>Lembur berkurang</dt>
+              <dd class="num num-data">23<span class="unit">%</span></dd>
+            </div>
+          </dl>
+        </section>
+
+        <!-- ===== TENTANG KAMI ===== -->
+        <section class="block" id="tentang" aria-labelledby="tentang-title">
+          <p class="eyebrow">Tentang Kami</p>
+          <h2 id="tentang-title">Kenapa kami bikin NeuroSync</h2>
+
+          <div class="prose">
+            <p>
+              NeuroSync lahir dari keresahan banyak pekerja yang kesulitan menjaga produktivitas
+              tanpa mengorbankan kesehatan mentalnya. Kebanyakan aplikasi produktivitas yang ada
+              hanya fokus pada pelacakan tugas, tanpa memperhatikan keseimbangan hidup penggunanya.
+            </p>
+            <p>
+              Makanya di NeuroSync, catatan kerja dan catatan kondisi diri ada di satu tempat.
+              Perusahaan tetap bisa lihat ritme kerja timnya, tapi karyawan juga bisa lihat punyanya
+              sendiri. Hari ini sebenarnya kerja berapa jam? Sempat istirahat atau tidak?
+            </p>
+          </div>
+
+          <h3 class="subhead">NeuroSync cocok untuk siapa?</h3>
+          <ul class="audience">
+            <li>
+              <span class="audience-icon" aria-hidden="true">🏠</span>
+              <h4>Tim remote & hybrid</h4>
+              <p>Susah dipantau dari jauh, tapi juga nggak mau kerasa diawasi terus.</p>
+            </li>
+            <li>
+              <span class="audience-icon" aria-hidden="true">📋</span>
+              <h4>Divisi HR</h4>
+              <p>
+                Butuh data beneran soal beban kerja tim, bukan cuma feeling, sebelum bikin
+                kebijakan.
+              </p>
+            </li>
+            <li>
+              <span class="audience-icon" aria-hidden="true">🚀</span>
+              <h4>Startup & tim kecil</h4>
+              <p>
+                Proyek banyak, orang sedikit, dan lembur pelan-pelan jadi kebiasaan tanpa ada yang
+                sadar.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ===== VISI & MISI ===== -->
+        <section class="block" id="visi-misi" aria-labelledby="visi-misi-title">
+          <p class="eyebrow">Arah Kami</p>
+          <h2 id="visi-misi-title">Visi & Misi</h2>
+
+          <div class="vm">
+            <article class="vision">
+              <h3>Visi</h3>
+              <p>
+                Menjadi platform terdepan yang membantu perusahaan meningkatkan produktivitas tim
+                tanpa mengorbankan kesejahteraan mental karyawannya.
+              </p>
+            </article>
+
+            <article class="mission">
+              <h3>Misi</h3>
+              <ol class="mission-list">
+                <li>Membangun kebiasaan kerja yang konsisten melalui sistem gamifikasi.</li>
+                <li>Menjaga keseimbangan waktu kerja dan istirahat karyawan.</li>
+                <li>
+                  Memberikan data yang membantu perusahaan mengambil keputusan yang lebih sehat
+                  untuk timnya.
+                </li>
+                <li>
+                  Membangun budaya kerja yang produktif tapi tetap manusiawi, baik di startup
+                  maupun perusahaan skala menengah.
+                </li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===== PRODUK & FITUR ===== -->
+        <section class="block" id="fitur" aria-labelledby="fitur-title">
+          <p class="eyebrow">Produk & Fitur</p>
+          <h2 id="fitur-title">Empat fitur utama</h2>
+          <p class="lead">
+            Mulai dari menjaga konsistensi kerja harian sampai memantau kondisi mental tim.
+          </p>
+
+          <ol class="features">
+            <!-- Fitur 1 -->
+            <li class="feature">
+              <div class="feature-head">
+                <span class="feature-num" aria-hidden="true">01</span>
+                <span class="feature-icon" aria-hidden="true">✅</span>
+                <h3>Check-in Harian & Sistem Streak</h3>
+              </div>
+
+              <p class="feature-desc">
+                Setiap hari, karyawan cukup satu kali klik <em>check-in</em> untuk menandai bahwa
+                mereka sudah memulai aktivitas kerja. Fitur ini terinspirasi dari mekanisme
+                <em>streak</em> pada aplikasi belajar bahasa atau kebugaran, di mana pengguna
+                termotivasi menjaga rangkaian hari aktifnya tidak putus.
+              </p>
+
+              <div class="feature-grid">
+                <div class="feature-col">
+                  <h4>Cara kerja</h4>
+                  <ul>
+                    <li>Sistem mencatat jumlah hari berturut-turut pengguna melakukan check-in.</li>
+                    <li>Setiap check-in memberi poin XP yang terkumpul menjadi level pengguna.</li>
+                    <li>
+                      Streak terpanjang tersimpan sebagai pencapaian yang bisa dilihat kapan saja.
+                    </li>
+                  </ul>
+                </div>
+                <div class="feature-col">
+                  <h4>Manfaat</h4>
+                  <ul>
+                    <li>Meningkatkan konsistensi rutinitas kerja harian karyawan.</li>
+                    <li>Menumbuhkan rasa tanggung jawab terhadap aktivitas kerja sendiri.</li>
+                    <li>Data check-in jadi indikator keterlibatan karyawan bagi tim HR.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <p class="feature-for">
+                <span class="tag">Cocok untuk</span>
+                Tim remote atau hybrid yang kehadiran aktifnya sulit dipantau langsung oleh atasan.
+              </p>
+            </li>
+
+            <!-- Fitur 2 -->
+            <li class="feature">
+              <div class="feature-head">
+                <span class="feature-num" aria-hidden="true">02</span>
+                <span class="feature-icon" aria-hidden="true">📅</span>
+                <h3>Jadwal & Pengumuman Tim</h3>
+              </div>
+
+              <p class="feature-desc">
+                Papan pengumuman digital bagi perusahaan atau ketua tim untuk membagikan agenda
+                penting ke seluruh anggota: jadwal <em>sprint review</em>, tenggat pengumpulan
+                pekerjaan, rapat mingguan, sampai sesi pelatihan internal.
+              </p>
+
+              <div class="feature-grid">
+                <div class="feature-col">
+                  <h4>Cara kerja</h4>
+                  <ul>
+                    <li>Admin atau ketua tim menambahkan agenda beserta tanggal pelaksanaannya.</li>
+                    <li>Setiap agenda otomatis diurutkan berdasarkan tanggal terdekat.</li>
+                    <li>
+                      Sistem menampilkan hitung mundur otomatis seperti &ldquo;3 hari lagi&rdquo;
+                      atau &ldquo;Besok&rdquo;.
+                    </li>
+                  </ul>
+                </div>
+                <div class="feature-col">
+                  <h4>Manfaat</h4>
+                  <ul>
+                    <li>Mengurangi miskomunikasi soal jadwal kerja antar anggota tim.</li>
+                    <li>Membantu tim memprioritaskan pekerjaan berdasarkan tenggat terdekat.</li>
+                    <li>Mempermudah manajemen menyampaikan informasi penting secara terpusat.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <p class="feature-for">
+                <span class="tag">Cocok untuk</span>
+                Perusahaan dengan banyak proyek berjalan yang butuh koordinasi jadwal antar divisi.
+              </p>
+            </li>
+
+            <!-- Fitur 3 -->
+            <li class="feature feature-accent">
+              <div class="feature-head">
+                <span class="feature-num" aria-hidden="true">03</span>
+                <span class="feature-icon" aria-hidden="true">🧠</span>
+                <h3>Cek Kesehatan Mental & Keseimbangan Waktu</h3>
+              </div>
+
+              <p class="feature-desc">
+                Berbeda dari aplikasi produktivitas pada umumnya, NeuroSync ikut memperhatikan
+                kondisi mental penggunanya. Setiap hari pengguna dapat mencatat suasana hatinya dan
+                mengisi alokasi jam aktivitas harian (kerja, istirahat, hiburan) yang lalu
+                dibandingkan dengan standar jam ideal.
+              </p>
+
+              <div class="feature-grid">
+                <div class="feature-col">
+                  <h4>Cara kerja</h4>
+                  <ul>
+                    <li>Pengguna memilih mood harian lewat beberapa pilihan sederhana.</li>
+                    <li>Pengguna mengisi estimasi jam kerja, istirahat, dan hiburan hari itu.</li>
+                    <li>
+                      Sistem memberi catatan otomatis bila jam istirahat terlalu sedikit atau jam
+                      kerja berlebihan.
+                    </li>
+                  </ul>
+                </div>
+                <div class="feature-col">
+                  <h4>Manfaat</h4>
+                  <ul>
+                    <li>
+                      Membantu karyawan lebih sadar terhadap pola kerja dan istirahatnya sendiri.
+                    </li>
+                    <li>Berpotensi mencegah risiko kelelahan kerja berlebihan sejak dini.</li>
+                    <li>Memberi gambaran awal kesejahteraan tim bagi manajemen maupun HR.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <p class="feature-for">
+                <span class="tag">Cocok untuk</span>
+                Perusahaan yang ingin membangun budaya kerja sehat dan berkelanjutan, bukan cuma
+                berorientasi hasil.
+              </p>
+            </li>
+
+            <!-- Fitur 4 -->
+            <li class="feature">
+              <div class="feature-head">
+                <span class="feature-num" aria-hidden="true">04</span>
+                <span class="feature-icon" aria-hidden="true">📊</span>
+                <h3>Statistik & Laporan Berkala</h3>
+              </div>
+
+              <p class="feature-desc">
+                Seluruh catatan mood dan keseimbangan waktu yang diisi setiap hari terekam dan bisa
+                dilihat kembali sebagai rangkuman berkala, mulai dari satu minggu, satu bulan,
+                hingga dua bulan terakhir.
+              </p>
+
+              <div class="feature-grid">
+                <div class="feature-col">
+                  <h4>Cara kerja</h4>
+                  <ul>
+                    <li>
+                      Sistem menghitung rata-rata mood dan skor keseimbangan waktu pada rentang yang
+                      dipilih.
+                    </li>
+                    <li>
+                      Hasilnya ditampilkan sebagai angka dan kesimpulan singkat yang mudah dibaca.
+                    </li>
+                    <li>
+                      Data bisa dipakai untuk evaluasi rutin, baik oleh individu maupun manajemen.
+                    </li>
+                  </ul>
+                </div>
+                <div class="feature-col">
+                  <h4>Manfaat</h4>
+                  <ul>
+                    <li>
+                      Menunjukkan tren produktivitas dan kesejahteraan tim dari waktu ke waktu.
+                    </li>
+                    <li>
+                      Membantu perusahaan menyusun kebijakan SDM berdasarkan data, bukan asumsi.
+                    </li>
+                    <li>Memudahkan individu melihat perkembangan kebiasaan kerjanya sendiri.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <p class="feature-for">
+                <span class="tag">Cocok untuk</span>
+                Divisi HR atau manajemen yang butuh data pendukung saat menyusun kebijakan
+                kesejahteraan karyawan.
+              </p>
+            </li>
+          </ol>
+        </section>
+
+        <!-- ===== FAQ ===== -->
+        <section class="block" id="faq" aria-labelledby="faq-title">
+          <p class="eyebrow">Pertanyaan Umum</p>
+          <h2 id="faq-title">FAQ</h2>
+
+          <div class="faq-list">
+            <details class="faq-item" open>
+              <summary class="faq-question">
+                <h3>Tim kami sudah pakai aplikasi manajemen tugas. Masih perlu NeuroSync?</h3>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Dua-duanya bisa jalan bareng. Aplikasi tugas ngurus siapa ngerjain apa, NeuroSync
+                  ngurus ritmenya: seberapa konsisten tim masuk, jam kerjanya seimbang atau enggak,
+                  dan kondisinya gimana dari minggu ke minggu. Hal-hal begini biasanya nggak
+                  kelihatan di aplikasi tugas.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <h3>Catatan mood karyawan bisa dilihat atasannya?</h3>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Nggak per orang. Atasan dan HR cuma lihat rangkuman satu tim, itu pun baru muncul
+                  kalau anggotanya minimal lima orang, biar nggak ketebak siapa yang ngisi apa.
+                  Catatan hariannya tetap milik karyawan sendiri.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <h3>Berapa biayanya?</h3>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Gratis buat tim sampai 10 orang, sudah termasuk check-in, streak, dan papan
+                  agenda. Kalau mau laporan berkala dan rangkuman HR, paket berbayarnya mulai
+                  Rp25.000 per karyawan per bulan.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <h3>Ribet nggak buat mulainya?</h3>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Nggak. Satu hari kerja juga sudah jalan, dan nggak ada yang perlu diinstal di
+                  komputer kantor. Tinggal undang anggota lewat email, habis itu mereka bisa
+                  langsung check-in dari browser atau HP. Minggu pertama kami temani buat nyiapin
+                  agenda dan struktur timnya.
+                </p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- ===== TIM FOUNDER ===== -->
+        <section class="block" id="tim" aria-labelledby="tim-title">
+          <p class="eyebrow">Tim Founder</p>
+          <h2 id="tim-title">Empat orang di balik NeuroSync</h2>
+          <p class="lead">Dari riset pengguna sampai baris kode terakhir.</p>
+
+          <ul class="team">
+            <li class="member">
+              <figure>
+                <div class="member-photo">
+                  <img
+                    src="assets/images/foto-rahmah.jpeg"
+                    alt="Foto Rahmah Putri Azzahra, Project Manager dan Co-Founder NeuroSync"
+                    width="120"
+                    height="120"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <figcaption>
+                  <h3>Rahmah Putri Azzahra</h3>
+                  <p class="member-role">Project Manager &amp; Co-Founder</p>
+                  <p class="member-bio">
+                    Menjaga timeline tim tetap waras dan memastikan tiap keputusan balik lagi ke
+                    kebutuhan pengguna.
+                  </p>
+                </figcaption>
+              </figure>
+            </li>
+
+            <li class="member">
+              <figure>
+                <div class="member-photo">
+                  <img
+                    src="assets/images/foto-evan.jpeg"
+                    alt="Foto Vincentius Evan Adibrata, Chief Technology Officer NeuroSync"
+                    width="120"
+                    height="120"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <figcaption>
+                  <h3>Vincentius Evan Adibrata</h3>
+                  <p class="member-role">Chief Technology Officer (CTO)</p>
+                  <p class="member-bio">
+                    Nyusun struktur halaman dan nulis kode inti platform, dari semantic HTML sampai
+                    kecepatan loading.
+                  </p>
+                </figcaption>
+              </figure>
+            </li>
+
+            <li class="member">
+              <figure>
+                <div class="member-photo">
+                  <img
+                    src="assets/images/foto-radit.jpeg"
+                    alt="Foto Radit Dwi Aditya, Lead Front-End Developer NeuroSync"
+                    width="120"
+                    height="120"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <figcaption>
+                  <h3>Radit Dwi Aditya</h3>
+                  <p class="member-role">Lead Front-End Developer</p>
+                  <p class="member-bio">
+                    Merumuskan konsep produk NeuroSync dan nulis spesifikasi keempat fiturnya,
+                    sekaligus nyusun layout grid halaman.
+                  </p>
+                </figcaption>
+              </figure>
+            </li>
+
+            <li class="member">
+              <figure>
+                <div class="member-photo">
+                  <img
+                    src="assets/images/foto-jamar.jpeg"
+                    alt="Foto Jamar Maulana, UI Assistant dan Quality Assurance NeuroSync"
+                    width="120"
+                    height="120"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <figcaption>
+                  <h3>Jamar Maulana</h3>
+                  <p class="member-role">UI Assistant &amp; Quality Assurance (QA)</p>
+                  <p class="member-bio">
+                    Menyusun design system NeuroSync dan menguji tiap alur sebelum sampai ke tangan
+                    pengguna.
+                  </p>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <!-- ================= SIDEBAR ================= -->
+      <aside class="sidebar" aria-label="Kabar perusahaan dan kontak">
+        <!-- Ajakan mencoba -->
+        <section class="cta-card" aria-labelledby="cta-title">
+          <p class="cta-eyebrow">Gratis 14 hari</p>
+          <h2 id="cta-title">Cobain dulu bareng tim kecil</h2>
+          <p>
+            Nggak perlu kartu kredit, nggak perlu instalasi. Ajak lima rekan kerja, jalanin
+            seminggu, terus lihat sendiri hasilnya.
+          </p>
+          <a class="btn btn-light" href="#kontak">Mulai uji coba</a>
+        </section>
+
+        <!-- Berita perusahaan -->
+        <section class="widget" id="update" aria-labelledby="update-title">
+          <h2 class="widget-title" id="update-title">Update Produk</h2>
+
+          <ul class="updates">
+            <li>
+              <article>
+                <p class="update-meta">
+                  <time datetime="2026-09-24">24 Sep 2026</time>
+                  <span class="chip chip-new">Baru</span>
+                </p>
+                <h3>Rangkuman dua bulanan</h3>
+                <p>Rentang laporan sekarang bisa ditarik sampai delapan minggu ke belakang.</p>
+              </article>
+            </li>
+            <li>
+              <article>
+                <p class="update-meta">
+                  <time datetime="2026-09-15">15 Sep 2026</time>
+                  <span class="chip">Perbaikan</span>
+                </p>
+                <h3>Hitung mundur agenda</h3>
+                <p>Agenda yang jatuh di akhir pekan nggak lagi tertulis &ldquo;Besok&rdquo;.</p>
+              </article>
+            </li>
+            <li>
+              <article>
+                <p class="update-meta">
+                  <time datetime="2026-09-02">2 Sep 2026</time>
+                  <span class="chip">Baru</span>
+                </p>
+                <h3>Pengingat istirahat</h3>
+                <p>Notifikasi muncul kalau jam kerja sudah lewat delapan jam tanpa jeda.</p>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Kontak -->
+        <section class="widget" id="kontak" aria-labelledby="kontak-title">
+          <h2 class="widget-title" id="kontak-title">Hubungi Kami</h2>
+
+          <address class="contacts">
+            <div class="contact">
+              <span class="contact-icon" aria-hidden="true">✉️</span>
+              <div>
+                <p class="contact-label">Email</p>
+                <a class="contact-value" href="mailto:halo@neurosync.id">halo@neurosync.id</a>
+              </div>
+            </div>
+            <div class="contact">
+              <span class="contact-icon" aria-hidden="true">💬</span>
+              <div>
+                <p class="contact-label">WhatsApp</p>
+                <a class="contact-value" href="tel:+628001234567">0800-1-234-567</a>
+              </div>
+            </div>
+            <div class="contact">
+              <span class="contact-icon" aria-hidden="true">📍</span>
+              <div>
+                <p class="contact-label">Kantor</p>
+                <p class="contact-value">Jakarta Selatan, Indonesia</p>
+              </div>
+            </div>
+            <div class="contact">
+              <span class="contact-icon" aria-hidden="true">🕗</span>
+              <div>
+                <p class="contact-label">Jam operasional</p>
+                <p class="contact-value">Senin-Jumat, 08.00-17.00 WIB</p>
+              </div>
+            </div>
+          </address>
+        </section>
+      </aside>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <p class="brand">
+            <img
+              class="brand-logo"
+              src="assets/logo/logo-mark.png"
+              alt=""
+              width="47"
+              height="32"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="brand-name">NeuroSync</span>
+          </p>
+          <p class="footer-desc">
+            Platform pemantau ritme kerja buat tim remote dan hybrid di Indonesia. Produktivitas dan
+            work life balance dicatat di satu tempat.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h2 class="footer-title">Navigasi</h2>
+          <ul class="footer-links">
+            <li><a href="#tentang">Tentang Kami</a></li>
+            <li><a href="#visi-misi">Visi & Misi</a></li>
+            <li><a href="#fitur">Produk & Fitur</a></li>
+            <li><a href="#tim">Tim Founder</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2 class="footer-title">Support</h2>
+          <ul class="footer-links">
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#kontak">Hubungi Kami</a></li>
+            <li><a href="#update">Update Produk</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="footer-note">
+        NeuroSync adalah perusahaan fiktif. Seluruh angka, fitur, dan kontak di situs ini adalah
+        data contoh yang dibuat untuk keperluan tugas kuliah, bukan layanan yang benar-benar
+        beroperasi.
+      </p>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 NeuroSync. Dibuat untuk Tugas Kelompok Web Client Development.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
